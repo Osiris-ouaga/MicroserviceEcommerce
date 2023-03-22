@@ -1,0 +1,293 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morricone shop</title>
+    <link th:href="@{/css/style.css}" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="header">
+    <div class="container">
+        <div class="navbar">
+            <nav>
+                <ul id="MenuItems">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/all-products">Products</a></li>
+                    <li><a href="/mon-panier">My Cart</a></li>
+                    <li><a href="/mes-commandes">Orders</a></li>
+                </ul>
+            </nav>
+            <img src="/images/cart.jpg" width="30px" height="30px" alt="">
+            <img src="/images/menu.png" class="menu-icon" onclick="menutoggle()" alt="">
+
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <h1 class="text">Shopping at your fingertips, the experience that clicks with you.</h1>
+                <p>Your favorite online store: a world of choice, quality, and comfort, where customer
+                    satisfaction is our priority. Explore, discover, and shop with ease, as we make e-commerce
+                    extraordinary!</p>
+                <a href="/all-products" class="btn"> Browse our gallery &#8594;</a>
+            </div>
+            <div class="col-2">
+                <img src="/images/image1.jpg" alt="">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--------featured category--------->
+<div class="categories">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-3">
+                <img src="/images/category-1.jpg" alt="">
+            </div>
+            <div class="col-3">
+                <img src="/images/category-2.jpg" alt="">
+            </div>
+            <div class="col-3">
+                <img src="/images/category-3.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--------featured products--------->
+<div class="small-container">
+    <h2 class="title">Best-selling products</h2>
+    <div class="row">
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${0}|}">
+                <img th:src="${products[0].illustration}" alt=""/>
+                <h4 th:text="${products[0].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[0].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${1}|}">
+                <img th:src="${products[1].illustration}" alt=""/>
+                <h4 th:text="${products[1].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[1].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${2}|}">
+                <img th:src="${products[2].illustration}" alt=""/>
+                <h4 th:text="${products[2].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[2].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${3}|}">
+                <img th:src="${products[3].illustration}" alt=""/>
+                <h4 th:text="${products[3].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[3].price}"></span>€</p>
+            </a>
+        </div>
+    </div>
+
+
+
+    <h2 class="title">Latest Products</h2>
+    <div class="row">
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${4}|}">
+                <img th:src="${products[4].illustration}" alt=""/>
+                <h4 th:text="${products[4].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[4].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${5}|}">
+                <img th:src="${products[5].illustration}" alt=""/>
+                <h4 th:text="${products[5].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[5].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${6}|}">
+                <img th:src="${products[6].illustration}" alt=""/>
+                <h4 th:text="${products[6].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[6].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${7}|}">
+                <img th:src="${products[7].illustration}" alt=""/>
+                <h4 th:text="${products[7].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[7].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${8}|}">
+                <img th:src="${products[8].illustration}" alt=""/>
+                <h4 th:text="${products[8].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[8].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${9}|}">
+                <img th:src="${products[9].illustration}" alt=""/>
+                <h4 th:text="${products[9].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[9].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${10}|}">
+                <img th:src="${products[10].illustration}" alt=""/>
+                <h4 th:text="${products[10].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[10].price}"></span>€</p>
+            </a>
+        </div>
+
+        <div class="col-4">
+            <a th:href="@{|/product-detail/${11}|}">
+                <img th:src="${products[11].illustration}" alt=""/>
+                <h4 th:text="${products[11].name}"></h4>
+                <div class="rating">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star-half-o"></i>
+                    <i class="fa fa-star-o"></i>
+                </div>
+                <p><span th:text="${products[11].price}"></span>€</p>
+            </a>
+        </div>
+    </div>
+</div>
+<!---------brands---------->
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="/images/uca-logo.png" alt="">
+            </div>
+            <div class="col-5">
+                <img src="/images/mbds-logo.jpg" alt="">
+            </div>
+            <div class="col-5">
+                <img src="/images/image1.jpg" alt="">
+            </div>
+            <div class="col-5">
+                <img src="/images/genie.jpg" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!---------footer---------->
+<div class="footer">
+    <hr>
+    <p class="copyright">copyright Prince Divin Mackpayen_MBDS</p>
+</div>
+
+<!--------js for toggle menu---------->
+<script>
+    const MenuItems = document.getElementById("MenuItems");
+    MenuItems.style.maxHeight = "0px";
+
+    function menutoggle(){
+        if(MenuItems.style.maxHeight === "0px"){
+            MenuItems.style.maxHeight = "200px";
+        }
+        else{
+            MenuItems.style.maxHeight = "0px";
+        }
+    }
+
+</script>
+
+</body>
+</html>
