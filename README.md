@@ -7,6 +7,7 @@ fonctionnalités :
 * Liste des produits
 * Détails d'un produit
 * Ajoute d'un produit dans un pannier
+* Supprimer un produit d'un panier
 * Passer une commande
 
 
